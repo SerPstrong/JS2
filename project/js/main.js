@@ -14,8 +14,7 @@ const renderProduct = (title, price) => {
 };
 
 const renderProducts = list => {
-    const productList = list.map(item => renderProduct(item.title, item.price));
-    document.querySelector('.products').innerHTML = productList;
+    document.querySelector('.products').innerHTML = list.map(item => renderProduct(item.title, item.price));
 };
 
 renderProducts(products);
