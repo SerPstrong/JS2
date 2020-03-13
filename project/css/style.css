@@ -1,3 +1,8 @@
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
 .products {
     display: flex;
     justify-content: space-around;
@@ -6,4 +11,19 @@
 header {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+}
+
+.btn-cart {
+    height: 30px;
+    border-radius: 13px;
+    outline: none;
+}
+
+.product-item {
+    text-align: center;
+    background-color: #dadada;
+    padding: 20px;
+    border-radius: 10px;
 }
