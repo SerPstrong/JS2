@@ -27,7 +27,7 @@ class ProductList {
 }
 
 class ProductItem {
-    constructor(product, img='https://placehold.it/200x150') {
+    constructor(product, img = 'https://placehold.it/200x150') {
         this.title = product.title;
         this.price = product.price;
         this.id = product.id;
@@ -43,6 +43,12 @@ class ProductItem {
                     <button class="buy-btn">Купить</button>
                 </div>
             </div>`;
+    }
+}
+
+class Basket {
+    constructor(container = 'btn-cart') {
+        this.container = container;
     }
 }
 
