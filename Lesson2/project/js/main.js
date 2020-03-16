@@ -16,12 +16,22 @@ class ProductList {
         ];
     }
 
+    _productsListSum() {
+        let sum = 0;
+        for (let i = 0; i < this.goods.length; i++) {
+            sum += this.goods[i].price ;
+        }
+        return sum;
+    }
+
     _render() {
         const block = document.querySelector(this.container);
         for (let product of this.goods) {
             const productObject = new ProductItem(product);
             this.allProducts.push(productObject);
             block.insertAdjacentHTML('beforeend', productObject.render());
+
+            document.querySelector('.btn-cart-sum').innerHTML = this._productsListSum();
         }
     }
 }
@@ -47,8 +57,8 @@ class ProductItem {
 }
 
 class Basket {
-    constructor(container = 'btn-cart') {
-        this.container = container;
+    constructor() {
+        this.goods = [];
     }
 }
 
