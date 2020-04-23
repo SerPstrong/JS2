@@ -14,15 +14,9 @@ const renderProduct = (title, price) => {
 };
 
 const renderProducts = (list) => {
-  // const productList = list.map((good) => {
-  //   return renderProduct(good.title, good.price);
-  // });
-  const productList = [];
-  list.forEach(good => {
-    productList.push(renderProduct(good.title, good.price));
-  });
-  console.log(productList);
-  document.querySelector('.products').innerHTML = productList;
+  document.querySelector('.products').innerHTML = list.map((good)=>{
+    return renderProduct(good.title, good.price)
+  }).join("");
 };
 
 renderProducts(products);
