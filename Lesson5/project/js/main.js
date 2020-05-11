@@ -8,21 +8,21 @@ const app = new Vue({
         imgCatalog: 'https://placehold.it/200x150'
     },
     methods: {
-        getJson(url) {
+        getJson(url){
             return fetch(url)
                 .then(result => result.json())
                 .catch(error => {
                     console.log(error);
                 })
         },
-        addProduct(product) {
+        addProduct(product){
             console.log(product.id_product);
         }
     },
-    mounted() {
+    mounted(){
         this.getJson(`${API + this.catalogUrl}`)
             .then(data => {
-                for (let el of data) {
+                for(let el of data){
                     this.products.push(el);
                 }
             });
